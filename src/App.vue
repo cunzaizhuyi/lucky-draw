@@ -9,6 +9,9 @@
         抽奖配置
       </el-button>
     </header>
+    <div style="position:absolute; left:20px;top:70px">
+      <img src="./assets/logo.png" alt="" style="width:100px">
+    </div>
     <div id="main" :class="{ mask: showRes }"></div>
     <div id="tags">
       <ul v-for="item in datas" :key="item.key">
@@ -27,7 +30,9 @@
     </div>
     <transition name="bounce">
       <div id="resbox" v-show="showRes">
-        <p @click="showRes = false">{{ categoryName }}抽奖结果：</p>
+        <p @click="showRes = false">
+          <!-- {{ categoryName }} -->
+          中奖名单：</p>
         <div class="container">
           <span
             v-for="item in resArr"
@@ -92,9 +97,9 @@
     />
     <Result :visible.sync="showResult"></Result>
 
-    <span class="copy-right">
+    <!-- <span class="copy-right">
       Copyright©zhangyongfeng5350@gmail.com
-    </span>
+    </span> -->
 
     <audio
       id="audiobg"
@@ -374,7 +379,7 @@ export default {
 #root {
   height: 100%;
   position: relative;
-  background-image: url('./assets/bg1.jpg');
+  background-image: url('./assets/bg2.jpeg');
   background-size: 100% 100%;
   background-position: center center;
   background-repeat: no-repeat;
@@ -384,12 +389,12 @@ export default {
     filter: blur(5px);
   }
   header {
-    height: 50px;
-    line-height: 50px;
+    height: 65px;
+    line-height: 65px;
     position: relative;
     .el-button {
       position: absolute;
-      top: 17px;
+      top: 23px;
       padding: 0;
       z-index: 9999;
       &.con {
@@ -442,7 +447,7 @@ export default {
   transform: translateX(-50%) translateY(-50%);
   text-align: center;
   p {
-    color: red;
+    color: #FEF3C6;
     font-size: 50px;
     line-height: 120px;
   }
@@ -452,7 +457,8 @@ export default {
     flex-wrap: wrap;
   }
   .itemres {
-    background: #fff;
+    background: #FEF3C6;
+    color: #000028;
     width: 160px;
     height: 160px;
     border-radius: 4px;

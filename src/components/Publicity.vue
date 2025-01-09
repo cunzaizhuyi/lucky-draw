@@ -19,7 +19,7 @@
   </div>
 </template>
 <script>
-import { conversionCategoryName } from '@/helper/index';
+// import { conversionCategoryName } from '@/helper/index';
 
 export default {
   name: 'Publicity',
@@ -31,22 +31,23 @@ export default {
       return this.$store.state.result;
     },
     message() {
-      const { result, config } = this;
-      const fields = Object.keys(config);
+      // const { result, config } = this;
+      const { config } = this;
+      // const fields = Object.keys(config);
 
       let message = [{ key: 0, title: config.name }];
-      fields.forEach((item, index) => {
-        let label = conversionCategoryName(item);
-        if (result[item] && config[item] > 0) {
-          message.push({
-            key: index + 1,
-            title: `${label}抽奖结果:`,
-            value: `${
-              result[item].length > 0 ? result[item].join('、') : '暂未抽取'
-            }`
-          });
-        }
-      });
+      // fields.forEach((item, index) => {
+      //   let label = conversionCategoryName(item);
+      //   if (result[item] && config[item] > 0) {
+      //     message.push({
+      //       key: index + 1,
+      //       title: `${label}抽奖结果:`,
+      //       value: `${
+      //         result[item].length > 0 ? result[item].join('、') : '暂未抽取'
+      //       }`
+      //     });
+      //   }
+      // });
 
       return message;
     }
@@ -77,8 +78,8 @@ export default {
     }
     &.actiname {
       .title {
-        color: red;
-        font-size: 20px;
+        color: #FEF3C6;
+        font-size: 36px;
       }
     }
   }
